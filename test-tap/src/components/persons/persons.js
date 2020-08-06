@@ -1,7 +1,8 @@
 import React from 'react';
-import PersonIcon from '../icons/persons/person.svg';
-import EditIcon from '../icons/actions/edit.svg';
-import DeleteIcon from '../icons/actions/delete.svg';
+import './index.css';
+import PersonIcon from '../../icons/persons/person.svg';
+import EditIcon from '../../icons/actions/edit.svg';
+import DeleteIcon from '../../icons/actions/delete.svg';
 
 function Person({data}) {
     return  <div className="person">

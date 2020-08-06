@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as DB from './db/db.js';
 import './App.css';
-import { Persons } from './components/persons.js';
+import { Persons } from './components/persons/persons.js';
 
 function App() {
 
@@ -24,9 +24,9 @@ function App() {
     <header>
       <div>Список сотрудников</div>
     </header>
-    <div className="bodyList">
+    <main className="personsList">
       {isLoaded ? <Persons data={persons}/> : <div></div>}
-    </div>
+    </main>
     <footer>
       <button type="button" className="btn btn-person">Добавить</button>
     </footer>
