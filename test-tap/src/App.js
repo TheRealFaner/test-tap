@@ -21,10 +21,15 @@ function App() {
 
   return (
     <>
-    <div className="headerList">Список сотрудников</div>
+    <header>
+      <div>Список сотрудников</div>
+    </header>
     <div className="bodyList">
       {isLoaded ? <Persons data={persons}/> : <div></div>}
     </div>
+    <footer>
+      <button type="button" className="btn btn-person">Добавить</button>
+    </footer>
     </>
   );
 }

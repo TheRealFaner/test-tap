@@ -1,6 +1,22 @@
+header {
+  
+  font-size: 20px;
+  font-weight: bold;
+  /*border: 1px solid black;*/
+  border-radius: 5px 5px 1px 1px;
+  padding: 0.5rem;
+  margin-bottom: 0.1rem;
+  color: #fff; 
+  background-color: #597387;
+}
+footer{
 
-.headerList{
-  display: flex;
+  color: #fff; 
+  background-color: #8c9ea3;
+  font-weight: bold;
+  border-radius: 1px 1px 5px 5px;
+  padding: 0.5rem;
+  margin-top: 0.1rem;
 }
 .bodyList{
   display: flex;
@@ -9,9 +25,63 @@
 .person{
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #597387;
+  margin-top: 0.1rem;
+  padding: 0.2rem;
 }
-.person .lastName, .person .lastName {
+.person:first-child{
+  margin-top: 0;
+} 
+.person .firstName, .person .lastName {
   display: flex;
-  flex-direction: column;
-  margin: 0 1rem 0 1rem;
+  justify-content: center;
+  flex-basis: 3rem;
+  flex-grow: 1;
 }
+.person .commands{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-basis: 1rem;
+  flex-grow: 2;
+}
+img.personIcon{
+  height: 1.5rem;
+}
+img.actionImg
+{
+  height: 1rem;
+  fill: white;
+}
+button.btn{
+  border-radius: 5px;
+  color: #fff; 
+  user-select: none; 
+  outline: none; 
+  border: none;
+  padding: 0.6em 1.5em; 
+}
+button.btn-action-edit{ background: rgb(221, 170, 2); }
+button.btn-action-edit:hover{ background: rgb(241, 186, 3); }
+button.btn-action-edit:active{ background: rgb(179, 138, 3); }
+button.btn-action-delete{ background: rgb(214, 55, 55); }
+button.btn-action-delete:hover{ background: rgb(255, 77, 77); }
+button.btn-action-delete:active{ background: rgb(182, 55, 55); }
+button.btn-action-delete, button.btn-action-edit{
+  padding: 0.6em 1em; 
+  margin: 0 5px 0 5px;
+  height: 2rem;
+}
+button.btn-person{
+  border-radius: 5px;
+  color: #fff; 
+  user-select: none; 
+  background: rgb(83, 146, 88);
+  padding: 0.6em 1.5em; 
+  outline: none; 
+  border: none;
+}
+button.btn-person:hover { background: rgb(98, 173, 104); } /* при наведении курсора мышки */
+button.btn-person:active { background: rgb(65, 134, 71); } /* при нажатии */
