@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import * as DB from './db/db.js';
 import './App.css';
+import { Persons } from './components/persons.js';
 
 function App() {
+
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [persons, setPersons] = useState([]);
+
+  // Аналогично componentDidMount и componentDidUpdate:
+  useEffect(() => {
+    async function fetchData() {
+      setPersons(await DB.GetAllPersons());
+    };
+    // Обновляем заголовок документа с помощью API браузера
+    fetchData();
+    console.log(persons);
+    setIsLoaded(true);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div className="headerList">Список сотрудников</div>
+    <div className="bodyList">
+      {isLoaded ? <Persons data={persons}/> : <div></div>}
     </div>
+    </>
   );
 }
 
