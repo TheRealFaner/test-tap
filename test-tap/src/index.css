@@ -15,7 +15,7 @@ code {
   margin: 1rem;
 }
 
-@media only screen and (min-width : 1024px) {
+@media only screen and (min-width : 800px) {
   #root{
     margin: 1rem 25% 0 25%;
   }

@@ -17,9 +17,32 @@ footer{
 }
 button.btn{
   border-radius: 5px;
-  color: #fff; 
   user-select: none; 
   outline: none; 
   border: none;
+  color: #fff; 
   padding: 0.6em 1.5em; 
+}
+button.btn-sucess{ background: rgb(83, 146, 88); }
+button.btn-sucess:hover { background: rgb(98, 173, 104); }
+button.btn-sucess:active { background: rgb(65, 134, 71); } 
+button.btn-alert{ background: rgb(221, 170, 2); }
+button.btn-alert:hover{ background: rgb(241, 186, 3); }
+button.btn-alert:active{ background: rgb(179, 138, 3); }
+button.btn-warning{ background: rgb(214, 55, 55); }
+button.btn-warning:hover{ background: rgb(255, 77, 77); }
+button.btn-warning:active{ background: rgb(182, 55, 55); }
+button.btn-action{
+  padding: 0.6em 0.8em; 
+  margin-left: 0.2rem;
+  height: 2rem;
+}
+button.btn-action:first-child{
+  margin: 0;
+}
+button.btn-inline{
+  margin-left: 1rem;
+}
+button.btn-inline:first-child{
+  margin: 0;
 }

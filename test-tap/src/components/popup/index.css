@@ -1,0 +1,70 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0,0,0, 0.7);
+}
+.popup_inner .headerText{
+    display: flex;
+    justify-content: center;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    color: #fff; 
+    background-color: #597387;
+}
+.popup .popup_inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+.popup_inner form{
+    width: 100%;
+}
+.popup_inner form .inputs{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+.popup_inner form .inputs .personInput{
+    margin-bottom: 0.5rem;
+}
+.popup_inner form .inputs .personInput:first-child{
+    margin-top: 0.3rem;
+}
+.popup_inner form .personButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #8c9ea3;
+    border-radius: 0 0 5px 5px;
+    padding: 0.5rem 0 0.5rem 0;
+}
+.personInput h5{
+    margin: 0;
+}
+@media only screen and (min-width : 240px) {
+    .popup_inner{
+        position: absolute;
+        left: 10%;
+        right: 10%;
+        top: 10%;
+        margin: auto;
+        background: white;
+    }
+}
+@media only screen and (min-width : 800px) {
+    .popup_inner {
+        position: absolute;
+        left: 30%;
+        right: 30%;
+        top: 10%;
+        margin: auto;
+        background: white;
+    }
+}
