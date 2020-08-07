@@ -34,11 +34,10 @@ function App() {
     async function fetchData() {
       setPersons(await DB.GetAllPersons());
     };
-    if (!isLoaded)
-      {
-        fetchData();
-        setIsLoaded(true);
-      }
+
+      fetchData();
+      setIsLoaded(true);
+
   }, [isLoaded]);
 
   return (
