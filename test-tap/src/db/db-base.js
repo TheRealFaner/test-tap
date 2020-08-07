@@ -2,7 +2,7 @@ import axios from 'axios';
 import toast from 'siiimple-toast';
 import 'siiimple-toast/dist/style.css';
 
-const server = 'http://localhost:3001/'
+const server = 'http://localhost:3001/api/v1/'
 
 function Toast(requestCode) {
     console.log(requestCode);
@@ -22,7 +22,7 @@ function Toast(requestCode) {
             toast.alert('Неверный запрос! Обратитесь к администратору.');
             break;
         }
-        case 400:
+        case 404:
         {
             toast.alert('Сущность не найдена!');
             break;

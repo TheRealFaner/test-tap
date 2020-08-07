@@ -19,6 +19,7 @@ function App() {
     {
       setActionId(null);
       setIsLoaded(false);
+      setIsDelete(false);
     }
     if (id != null)
     {
