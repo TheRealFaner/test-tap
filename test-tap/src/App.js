@@ -2,24 +2,44 @@ import React, { useState, useEffect } from 'react';
 import * as DB from './db/db.js';
 import './App.css';
 import { Persons } from './components/persons/persons.js';
-import { Popup } from './components/popup/popup.js';
+import { Popup as PersonsPopup } from './components/persons/popup/popup.js';
+
+
 function App() {
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [persons, setPersons] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
+  const [actionId, setActionId] = useState(null);
+  const [isDelete, setIsDelete] = useState(false);
 
-  function togglePopup() {
+  function togglePopup(isSubmit = false, id = null, deleteMod = false) {
     setShowPopup(!showPopup);
+    if (isSubmit)
+    {
+      setActionId(null);
+      setIsLoaded(false);
+    }
+    if (id != null)
+    {
+      if (deleteMod)
+      {
+        setIsDelete(true);
+      }
+      setActionId(id);
+    }
   }
-  // Аналогично componentDidMount и componentDidUpdate:
+
   useEffect(() => {
     async function fetchData() {
       setPersons(await DB.GetAllPersons());
     };
-    fetchData();
-    setIsLoaded(true);
-  }, []);
+    if (!isLoaded)
+      {
+        fetchData();
+        setIsLoaded(true);
+      }
+  }, [isLoaded]);
 
   return (
     <>
@@ -27,17 +47,18 @@ function App() {
       <span>Список сотрудников</span>
     </header>
     <main className="personsList">
-      {isLoaded ? <Persons data={persons}/> : <div></div>}
+      {isLoaded ? <Persons data={persons} togglePopup={togglePopup}/> : <div></div>}
     </main>
     <footer>
       <button type="button" className="btn btn-sucess" onClick={togglePopup}>Добавить</button>
     </footer>
     {showPopup ? 
-        <Popup
+        <PersonsPopup
           header="Добавить сотрудника"
+          id={actionId}
           togglePopup={togglePopup}
-        />
-        : null
+          deleteMode={isDelete}
+        /> : null
       }
     </>
   );
